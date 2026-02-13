@@ -42,7 +42,7 @@ export default function Navbar() {
         scrolled ? 'bg-zinc-950/90 backdrop-blur-xl border-b border-zinc-800' : 'bg-transparent'
       }`}>
         <div className="container mx-auto flex justify-between items-center p-6">
-          <Link href="/" className="text-2xl font-bold bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent">
+          <Link href="/" className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">
             Aeroflux Electric
           </Link>
 
@@ -50,7 +50,7 @@ export default function Navbar() {
           <div className="hidden md:flex gap-8 text-gray-300 items-center">
             <Link href="/" className="hover:text-white transition-colors relative group">
               Home
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-pink-500 to-purple-500 group-hover:w-full transition-all duration-300"></span>
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-600 to-cyan-500 group-hover:w-full transition-all duration-300"></span>
             </Link>
             <Link href="/products" className="hover:text-white transition-colors relative group">
               Products
@@ -66,23 +66,23 @@ export default function Navbar() {
                 {isAdmin && (
                   <Link href="/admin" className="hover:text-white transition-colors relative group">
                     Admin
-                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-orange-500 to-red-500 group-hover:w-full transition-all duration-300"></span>
+                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-red-500 group-hover:w-full transition-all duration-300"></span>
                   </Link>
                 )}
                 <Link href="/orders" className="hover:text-white transition-colors relative group">
                   My Orders
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-yellow-500 to-orange-500 group-hover:w-full transition-all duration-300"></span>
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-cyan-500 to-blue-500 group-hover:w-full transition-all duration-300"></span>
                 </Link>
                 <button 
                   onClick={handleSignOut}
-                  className="bg-gradient-to-r from-red-500 to-pink-500 text-white px-4 py-2 rounded-full font-semibold hover:shadow-lg transition-all text-sm"
+                  className="bg-gradient-to-r from-red-500 to-cyan-500 text-white px-4 py-2 rounded-full font-semibold hover:shadow-lg transition-all text-sm"
                 >
                   Logout
                 </button>
               </>
             ) : (
               <Link href="/login">
-                <button className="bg-gradient-to-r from-pink-500 to-purple-500 text-white px-4 py-2 rounded-full font-semibold hover:shadow-lg transition-all text-sm">
+                <button className="bg-gradient-to-r from-blue-600 to-cyan-500 text-white px-4 py-2 rounded-full font-semibold hover:shadow-lg transition-all text-sm">
                   Login
                 </button>
               </Link>
@@ -108,7 +108,7 @@ export default function Navbar() {
       {/* Mobile Menu Overlay */}
       {mobileMenuOpen && (
         <div 
-          className="fixed inset-0 bg-black/80 backdrop-blur-sm z-40 md:hidden"
+          className="fixed inset-0 bg-blue/80 backdrop-blur-sm z-40 md:hidden"
           onClick={closeMenu}
         >
           <div 
@@ -138,14 +138,14 @@ export default function Navbar() {
                   </Link>
                   <button 
                     onClick={handleSignOut}
-                    className="bg-gradient-to-r from-red-500 to-pink-500 text-white px-4 py-3 rounded-full font-semibold hover:shadow-lg transition-all text-left"
+                    className="bg-gradient-to-r from-red-500 to-cyan-500 text-white px-4 py-3 rounded-full font-semibold hover:shadow-lg transition-all text-left"
                   >
                     Logout
                   </button>
                 </>
               ) : (
                 <Link href="/login" onClick={closeMenu}>
-                  <button className="w-full bg-gradient-to-r from-pink-500 to-purple-500 text-white px-4 py-3 rounded-full font-semibold hover:shadow-lg transition-all">
+                  <button className="w-full bg-gradient-to-r from-blue-600 to-cyan-500 text-white px-4 py-3 rounded-full font-semibold hover:shadow-lg transition-all">
                     Login
                   </button>
                 </Link>

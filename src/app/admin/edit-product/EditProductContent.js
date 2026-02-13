@@ -108,7 +108,7 @@ export default function EditProductContent() {
   return (
     <div className="min-h-screen bg-zinc-950 text-white pt-24 pb-16 px-8">
       <div className="max-w-3xl mx-auto">
-        <Link href="/admin" className="text-purple-400 hover:text-purple-300 mb-6 inline-block">
+        <Link href="/admin" className="text-blue-400 hover:text-blue-300 mb-6 inline-block">
           ← Back to Admin
         </Link>
 
@@ -125,7 +125,7 @@ export default function EditProductContent() {
                 type="text"
                 value={formData.name}
                 onChange={(e) => setFormData({...formData, name: e.target.value})}
-                className="w-full px-4 py-3 rounded-lg bg-zinc-800 border border-zinc-700 focus:border-purple-500 focus:outline-none transition-colors"
+                className="w-full px-4 py-3 rounded-lg bg-zinc-800 border border-zinc-700 focus:border-blue-500 focus:outline-none transition-colors"
                 required
               />
             </div>
@@ -135,7 +135,7 @@ export default function EditProductContent() {
               <textarea
                 value={formData.description}
                 onChange={(e) => setFormData({...formData, description: e.target.value})}
-                className="w-full px-4 py-3 rounded-lg bg-zinc-800 border border-zinc-700 focus:border-purple-500 focus:outline-none transition-colors"
+                className="w-full px-4 py-3 rounded-lg bg-zinc-800 border border-zinc-700 focus:border-blue-500 focus:outline-none transition-colors"
                 rows="4"
               />
             </div>
@@ -147,7 +147,7 @@ export default function EditProductContent() {
                 step="0.01"
                 value={formData.price}
                 onChange={(e) => setFormData({...formData, price: e.target.value})}
-                className="w-full px-4 py-3 rounded-lg bg-zinc-800 border border-zinc-700 focus:border-purple-500 focus:outline-none transition-colors"
+                className="w-full px-4 py-3 rounded-lg bg-zinc-800 border border-zinc-700 focus:border-blue-500 focus:outline-none transition-colors"
                 required
               />
             </div>
@@ -158,7 +158,7 @@ export default function EditProductContent() {
                 type="url"
                 value={formData.image_url}
                 onChange={(e) => setFormData({...formData, image_url: e.target.value})}
-                className="w-full px-4 py-3 rounded-lg bg-zinc-800 border border-zinc-700 focus:border-purple-500 focus:outline-none transition-colors"
+                className="w-full px-4 py-3 rounded-lg bg-zinc-800 border border-zinc-700 focus:border-blue-500 focus:outline-none transition-colors"
               />
             </div>
 
@@ -167,7 +167,7 @@ export default function EditProductContent() {
               <select
                 value={formData.category}
                 onChange={(e) => setFormData({...formData, category: e.target.value})}
-                className="w-full px-4 py-3 rounded-lg bg-zinc-800 border border-zinc-700 focus:border-purple-500 focus:outline-none transition-colors"
+                className="w-full px-4 py-3 rounded-lg bg-zinc-800 border border-zinc-700 focus:border-blue-500 focus:outline-none transition-colors"
               >
                 <option value="">Select Category</option>
                 <option value="Cooling">Cooling</option>
@@ -199,13 +199,14 @@ export default function EditProductContent() {
                   Cancel
                 </button>
               </Link>
-              <button
-                type="submit"
-                disabled={saving}
-                className="flex-1 bg-gradient-to-r from-blue-500 to-cyan-500 text-white px-8 py-4 rounded-full font-semibold hover:shadow-2xl hover:shadow-blue-500/50 transition-all transform hover:scale-105 disabled:opacity-50"
-              >
-                {saving ? 'Saving...' : 'Save Changes'}
-              </button>
+             <button
+  type="submit"
+  disabled={saving}
+  className="relative flex-1 bg-gradient-to-r from-blue-500 to-cyan-500 text-white px-8 py-4 rounded-full font-semibold hover:shadow-2xl hover:shadow-blue-500/50 transition-all transform hover:scale-105 disabled:opacity-50 overflow-hidden group/btn"
+>
+  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover/btn:translate-x-full transition-transform duration-700"></div>
+  <span className="relative z-10">{saving ? 'Saving...' : 'Save Changes'}</span>
+</button>
             </div>
           </form>
         </div>

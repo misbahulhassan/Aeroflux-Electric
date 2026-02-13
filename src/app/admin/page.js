@@ -92,7 +92,7 @@ export default function AdminPage() {
   return (
     <div className="min-h-screen bg-zinc-950 text-white pt-24 pb-16 px-8">
       <div className="max-w-7xl mx-auto">
-        <h1 className="text-6xl font-bold mb-4 bg-gradient-to-r from-orange-500 via-red-500 to-pink-500 bg-clip-text text-transparent">
+        <h1 className="text-6xl font-bold mb-4 bg-gradient-to-r from-blue-500 via-red-500 to-cyan-500 bg-clip-text text-transparent">
           Admin Dashboard
         </h1>
         <p className="text-xl text-gray-400 mb-12">Manage your store</p>
@@ -108,7 +108,7 @@ export default function AdminPage() {
           
           <div className="bg-zinc-900/50 backdrop-blur-lg rounded-2xl p-6 border border-zinc-800">
             <p className="text-gray-400 text-sm mb-2">Pending Orders</p>
-            <p className="text-4xl font-bold bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent">
+            <p className="text-4xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
               {stats.pendingOrders}
             </p>
           </div>
@@ -122,7 +122,7 @@ export default function AdminPage() {
           
           <div className="bg-zinc-900/50 backdrop-blur-lg rounded-2xl p-6 border border-zinc-800">
             <p className="text-gray-400 text-sm mb-2">Total Revenue</p>
-            <p className="text-4xl font-bold bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">
+            <p className="text-4xl font-bold bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent">
               ₹{stats.totalRevenue.toFixed(2)}
             </p>
           </div>
@@ -134,7 +134,7 @@ export default function AdminPage() {
             onClick={() => setActiveTab('orders')}
             className={`px-6 py-3 rounded-lg font-semibold transition-all ${
               activeTab === 'orders'
-                ? 'bg-gradient-to-r from-pink-500 to-purple-500 text-white'
+                ? 'bg-gradient-to-r from-blue-600 to-cyan-500 text-white'
                 : 'bg-zinc-800 text-gray-400 hover:text-white'
             }`}
           >
@@ -144,7 +144,7 @@ export default function AdminPage() {
             onClick={() => setActiveTab('products')}
             className={`px-6 py-3 rounded-lg font-semibold transition-all ${
               activeTab === 'products'
-                ? 'bg-gradient-to-r from-pink-500 to-purple-500 text-white'
+                ? 'bg-gradient-to-r from-blue-600 to-cyan-500 text-white'
                 : 'bg-zinc-800 text-gray-400 hover:text-white'
             }`}
           >
@@ -178,7 +178,7 @@ export default function AdminPage() {
                     </div>
                     
                     <div className="text-right">
-                      <p className="text-2xl font-bold bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">
+                      <p className="text-2xl font-bold bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent">
                         ₹{parseFloat(order.total_amount).toFixed(2)}
                       </p>
                       <select
@@ -218,16 +218,17 @@ export default function AdminPage() {
             <div className="flex justify-between items-center mb-6">
               <h2 className="text-3xl font-bold">All Products</h2>
               <Link href="/admin/add-product">
-                <button className="bg-gradient-to-r from-green-500 to-emerald-500 text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg transition-all">
-                  + Add Product
-                </button>
-              </Link>
+  <button className="relative bg-gradient-to-r from-blue-600 to-cyan-500 text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg transition-all overflow-hidden group/btn">
+    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover/btn:translate-x-full transition-transform duration-700"></div>
+    <span className="relative z-10">+ Add Product</span>
+  </button>
+</Link>
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {products.map((product) => (
                 <div key={product.id} className="bg-zinc-900/50 backdrop-blur-lg rounded-2xl overflow-hidden border border-zinc-800">
-                  <div className="aspect-square bg-gradient-to-br from-purple-500/20 to-cyan-500/20">
+                  <div className="aspect-square bg-gradient-to-br from-cyan-500/20 to-cyan-500/20">
                     {product.image_url && (
                       <img src={product.image_url} alt={product.name} className="w-full h-full object-cover" />
                     )}
@@ -235,7 +236,7 @@ export default function AdminPage() {
                   <div className="p-4">
                     <h3 className="font-bold text-lg mb-1">{product.name}</h3>
                     <p className="text-sm text-gray-400 mb-2">{product.category}</p>
-                    <p className="text-xl font-bold mb-3 bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">
+                    <p className="text-xl font-bold mb-3 bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent">
                       ₹{parseFloat(product.price).toFixed(2)}
                     </p>
                                <div className="flex gap-2">

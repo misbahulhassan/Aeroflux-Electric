@@ -104,7 +104,7 @@ const categoryFromURL = searchParams.get('category')
   return (
     <div className="min-h-screen bg-zinc-950 text-white pt-24 pb-16 px-8">
       <div className="max-w-7xl mx-auto">
-        <h1 className="text-6xl font-bold mb-4 bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-500 bg-clip-text text-transparent">
+        <h1 className="text-6xl font-bold mb-4 bg-gradient-to-r from-blue-600 via-cyan-500 to-cyan-500 bg-clip-text text-transparent">
           All Products
         </h1>
         <p className="text-xl text-gray-400 mb-8">Discover our complete collection</p>
@@ -120,7 +120,7 @@ const categoryFromURL = searchParams.get('category')
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Search by name or description..."
-                className="w-full px-4 py-3 rounded-lg bg-zinc-800 border border-zinc-700 focus:border-purple-500 focus:outline-none transition-colors"
+                className="w-full px-4 py-3 rounded-lg bg-zinc-800 border border-zinc-700 focus:border-blue-500 focus:outline-none transition-colors"
               />
             </div>
 
@@ -130,7 +130,7 @@ const categoryFromURL = searchParams.get('category')
               <select
                 value={selectedCategory}
                 onChange={(e) => setSelectedCategory(e.target.value)}
-                className="w-full px-4 py-3 rounded-lg bg-zinc-800 border border-zinc-700 focus:border-purple-500 focus:outline-none transition-colors"
+                className="w-full px-4 py-3 rounded-lg bg-zinc-800 border border-zinc-700 focus:border-blue-500 focus:outline-none transition-colors"
               >
                 {categories.map(cat => (
                   <option key={cat} value={cat}>
@@ -148,7 +148,7 @@ const categoryFromURL = searchParams.get('category')
                   onClick={() => setSortBy('newest')}
                   className={`px-4 py-2 rounded-lg font-semibold transition-all ${
                     sortBy === 'newest'
-                      ? 'bg-gradient-to-r from-pink-500 to-purple-500 text-white'
+                      ? 'bg-gradient-to-r from-blue-600 to-cyan-500 text-white'
                       : 'bg-zinc-800 text-gray-400 hover:text-white'
                   }`}
                 >
@@ -158,7 +158,7 @@ const categoryFromURL = searchParams.get('category')
                   onClick={() => setSortBy('price-low')}
                   className={`px-4 py-2 rounded-lg font-semibold transition-all ${
                     sortBy === 'price-low'
-                      ? 'bg-gradient-to-r from-pink-500 to-purple-500 text-white'
+                      ? 'bg-gradient-to-r from-blue-600 to-cyan-500 text-white'
                       : 'bg-zinc-800 text-gray-400 hover:text-white'
                   }`}
                 >
@@ -168,7 +168,7 @@ const categoryFromURL = searchParams.get('category')
                   onClick={() => setSortBy('price-high')}
                   className={`px-4 py-2 rounded-lg font-semibold transition-all ${
                     sortBy === 'price-high'
-                      ? 'bg-gradient-to-r from-pink-500 to-purple-500 text-white'
+                      ? 'bg-gradient-to-r from-blue-600 to-cyan-500 text-white'
                       : 'bg-zinc-800 text-gray-400 hover:text-white'
                   }`}
                 >
@@ -178,7 +178,7 @@ const categoryFromURL = searchParams.get('category')
                   onClick={() => setSortBy('name')}
                   className={`px-4 py-2 rounded-lg font-semibold transition-all ${
                     sortBy === 'name'
-                      ? 'bg-gradient-to-r from-pink-500 to-purple-500 text-white'
+                      ? 'bg-gradient-to-r from-blue-600 to-cyan-500 text-white'
                       : 'bg-zinc-800 text-gray-400 hover:text-white'
                   }`}
                 >
@@ -201,9 +201,9 @@ const categoryFromURL = searchParams.get('category')
           {filteredProducts.map((product) => (
             <div 
               key={product.id} 
-              className="group relative bg-zinc-900/50 backdrop-blur-lg rounded-3xl overflow-hidden border border-zinc-800 hover:border-zinc-600 transition-all duration-500 transform hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/20"
+              className="group relative bg-zinc-900/50 backdrop-blur-lg rounded-3xl overflow-hidden border border-zinc-800 hover:border-zinc-600 transition-all duration-500 transform hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/20"
             >
-              <div className="aspect-square overflow-hidden bg-gradient-to-br from-purple-500/20 to-cyan-500/20">
+              <div className="aspect-square overflow-hidden bg-gradient-to-br from-cyan-500/20 to-cyan-500/20">
                 {product.image_url ? (
                   <img 
                     src={product.image_url} 
@@ -219,7 +219,7 @@ const categoryFromURL = searchParams.get('category')
               
               <div className="p-6">
                 {product.category && (
-                  <span className="inline-block px-3 py-1 text-xs font-semibold rounded-full bg-gradient-to-r from-pink-500/20 to-purple-500/20 text-pink-400 mb-3">
+                  <span className="inline-block px-3 py-1 text-xs font-semibold rounded-full bg-gradient-to-r from-blue-600/20 to-cyan-500/20 text-blue-400 mb-3">
                     {product.category}
                   </span>
                 )}
@@ -231,13 +231,13 @@ const categoryFromURL = searchParams.get('category')
                 )}
                 
                 <div className="flex items-center justify-between">
-                  <p className="text-3xl font-bold bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">
+                  <p className="text-3xl font-bold bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent">
                     ₹{parseFloat(product.price).toFixed(2)}
                   </p>
                   
                   <button 
                     onClick={() => addToCart(product)}
-                    className="bg-gradient-to-r from-pink-500 to-purple-500 text-white px-6 py-2 rounded-full font-semibold hover:shadow-lg hover:shadow-purple-500/50 transition-all transform hover:scale-105"
+                    className="bg-gradient-to-r from-blue-600 to-cyan-500 text-white px-6 py-2 rounded-full font-semibold hover:shadow-lg hover:shadow-blue-500/50 transition-all transform hover:scale-105"
                   >
                     Add to Cart
                   </button>
@@ -256,7 +256,7 @@ const categoryFromURL = searchParams.get('category')
                 setSelectedCategory('all')
                 setSortBy('newest')
               }}
-              className="mt-4 text-purple-400 hover:text-purple-300"
+              className="mt-4 text-blue-400 hover:text-blue-300"
             >
               Clear filters
             </button>

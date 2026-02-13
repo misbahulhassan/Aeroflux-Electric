@@ -83,7 +83,7 @@ export default function ProductsContent() {
   return (
     <div className="min-h-screen bg-zinc-950 text-white pt-24 pb-16 px-8">
       <div className="max-w-7xl mx-auto">
-        <h1 className="text-6xl font-bold mb-4 bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-500 bg-clip-text text-transparent">
+        <h1 className="text-6xl font-bold mb-4 bg-gradient-to-r from-blue-600 via-cyan-500 to-cyan-500 bg-clip-text text-transparent">
           All Products
         </h1>
         <p className="text-xl text-gray-400 mb-8">Discover our complete collection</p>
@@ -99,7 +99,7 @@ export default function ProductsContent() {
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Search by name or description..."
-                className="w-full px-4 py-3 rounded-lg bg-zinc-800 border border-zinc-700 focus:border-purple-500 focus:outline-none transition-colors"
+                className="w-full px-4 py-3 rounded-lg bg-zinc-800 border border-zinc-700 focus:border-blue-500 focus:outline-none transition-colors"
               />
             </div>
 
@@ -109,7 +109,7 @@ export default function ProductsContent() {
               <select
                 value={selectedCategory}
                 onChange={(e) => setSelectedCategory(e.target.value)}
-                className="w-full px-4 py-3 rounded-lg bg-zinc-800 border border-zinc-700 focus:border-purple-500 focus:outline-none transition-colors"
+                className="w-full px-4 py-3 rounded-lg bg-zinc-800 border border-zinc-700 focus:border-blue-500 focus:outline-none transition-colors"
               >
                 {categories.map(cat => (
                   <option key={cat} value={cat}>
@@ -127,7 +127,7 @@ export default function ProductsContent() {
                   onClick={() => setSortBy('newest')}
                   className={`px-4 py-2 rounded-lg font-semibold transition-all ${
                     sortBy === 'newest'
-                      ? 'bg-gradient-to-r from-pink-500 to-purple-500 text-white'
+                      ? 'bg-gradient-to-r from-blue-600 to-cyan-500 text-white'
                       : 'bg-zinc-800 text-gray-400 hover:text-white'
                   }`}
                 >
@@ -137,7 +137,7 @@ export default function ProductsContent() {
                   onClick={() => setSortBy('price-low')}
                   className={`px-4 py-2 rounded-lg font-semibold transition-all ${
                     sortBy === 'price-low'
-                      ? 'bg-gradient-to-r from-pink-500 to-purple-500 text-white'
+                      ? 'bg-gradient-to-r from-blue-600 to-cyan-500 text-white'
                       : 'bg-zinc-800 text-gray-400 hover:text-white'
                   }`}
                 >
@@ -147,7 +147,7 @@ export default function ProductsContent() {
                   onClick={() => setSortBy('price-high')}
                   className={`px-4 py-2 rounded-lg font-semibold transition-all ${
                     sortBy === 'price-high'
-                      ? 'bg-gradient-to-r from-pink-500 to-purple-500 text-white'
+                      ? 'bg-gradient-to-r from-blue-600 to-cyan-500 text-white'
                       : 'bg-zinc-800 text-gray-400 hover:text-white'
                   }`}
                 >
@@ -157,7 +157,7 @@ export default function ProductsContent() {
                   onClick={() => setSortBy('name')}
                   className={`px-4 py-2 rounded-lg font-semibold transition-all ${
                     sortBy === 'name'
-                      ? 'bg-gradient-to-r from-pink-500 to-purple-500 text-white'
+                      ? 'bg-gradient-to-r from-blue-600 to-cyan-500 text-white'
                       : 'bg-zinc-800 text-gray-400 hover:text-white'
                   }`}
                 >
@@ -178,51 +178,57 @@ export default function ProductsContent() {
         {/* Products Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredProducts.map((product) => (
-            <div 
-              key={product.id} 
-              className="group relative bg-zinc-900/50 backdrop-blur-lg rounded-3xl overflow-hidden border border-zinc-800 hover:border-zinc-600 transition-all duration-500 transform hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/20"
-            >
-              <div className="aspect-square overflow-hidden bg-gradient-to-br from-purple-500/20 to-cyan-500/20">
-                {product.image_url ? (
-                  <img 
-                    src={product.image_url} 
-                    alt={product.name}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
-                ) : (
-                  <div className="w-full h-full flex items-center justify-center text-gray-600">
-                    No Image
-                  </div>
-                )}
-              </div>
-              
-              <div className="p-6">
-                {product.category && (
-                  <span className="inline-block px-3 py-1 text-xs font-semibold rounded-full bg-gradient-to-r from-pink-500/20 to-purple-500/20 text-pink-400 mb-3">
-                    {product.category}
-                  </span>
-                )}
-                
-                <h3 className="text-2xl font-bold mb-2">{product.name}</h3>
-                
-                {product.description && (
-                  <p className="text-gray-400 mb-4 line-clamp-2">{product.description}</p>
-                )}
-                
-                <div className="flex items-center justify-between">
-                  <p className="text-3xl font-bold bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">
-                    ₹{parseFloat(product.price).toFixed(2)}
-                  </p>
-                  
-                  <button 
-                    onClick={() => addToCart(product)}
-                    className="bg-gradient-to-r from-pink-500 to-purple-500 text-white px-6 py-2 rounded-full font-semibold hover:shadow-lg hover:shadow-purple-500/50 transition-all transform hover:scale-105"
-                  >
-                    Add to Cart
-                  </button>
-                </div>
-              </div>
-            </div>
+           <div 
+  key={product.id} 
+  className="group relative bg-zinc-900/50 backdrop-blur-lg rounded-3xl overflow-hidden border border-zinc-800 hover:border-blue-500 transition-all duration-500 hover-lift hover:shadow-2xl hover:shadow-blue-500/30"
+>
+  {/* Shimmer on hover */}
+  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-blue-500/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+  
+  <div className="aspect-square overflow-hidden bg-gradient-to-br from-blue-500/20 to-cyan-500/20 relative">
+    {product.image_url ? (
+      <img 
+        src={product.image_url} 
+        alt={product.name}
+        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+      />
+    ) : (
+      <div className="w-full h-full flex items-center justify-center text-gray-600">
+        No Image
+      </div>
+    )}
+    {/* Glow overlay */}
+    <div className="absolute inset-0 bg-gradient-to-t from-blue-600/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+  </div>
+  
+  <div className="p-6 relative z-10">
+    {product.category && (
+      <span className="inline-block px-3 py-1 text-xs font-semibold rounded-full bg-gradient-to-r from-blue-500/20 to-cyan-500/20 text-blue-400 mb-3 border border-blue-500/30">
+        {product.category}
+      </span>
+    )}
+    
+    <h3 className="text-2xl font-bold mb-2 group-hover:text-cyan-400 transition-colors">{product.name}</h3>
+    
+    {product.description && (
+      <p className="text-gray-400 mb-4 line-clamp-2">{product.description}</p>
+    )}
+    
+    <div className="flex items-center justify-between">
+      <p className="text-3xl font-bold bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent">
+        ₹{parseFloat(product.price).toFixed(2)}
+      </p>
+      
+      <button 
+  onClick={() => addToCart(product)}
+  className="relative bg-gradient-to-r from-blue-600 to-cyan-500 text-white px-6 py-2 rounded-full font-semibold hover:shadow-lg hover:shadow-blue-500/50 transition-all transform hover:scale-105 overflow-hidden group/btn"
+>
+  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover/btn:translate-x-full transition-transform duration-700"></div>
+  <span className="relative z-10">Add to Cart</span>
+</button>
+    </div>
+  </div>
+</div>
           ))}
         </div>
 
@@ -235,7 +241,7 @@ export default function ProductsContent() {
                 setSelectedCategory('all')
                 setSortBy('newest')
               }}
-              className="mt-4 text-purple-400 hover:text-purple-300"
+              className="mt-4 text-blue-400 hover:text-blue-300"
             >
               Clear filters
             </button>

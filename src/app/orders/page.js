@@ -45,7 +45,7 @@ export default function OrdersPage() {
   return (
     <div className="min-h-screen bg-zinc-950 text-white pt-24 pb-16 px-8">
       <div className="max-w-6xl mx-auto">
-        <h1 className="text-6xl font-bold mb-4 bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-500 bg-clip-text text-transparent">
+        <h1 className="text-6xl font-bold mb-4 bg-gradient-to-r from-blue-600 via-cyan-500 to-cyan-500 bg-clip-text text-transparent">
           My Orders
         </h1>
         <p className="text-xl text-gray-400 mb-12">Track and manage your orders</p>
@@ -59,11 +59,12 @@ export default function OrdersPage() {
             </div>
             <h2 className="text-2xl font-bold mb-4">No orders yet</h2>
             <p className="text-gray-400 mb-8">Start shopping to see your orders here</p>
-            <Link href="/products">
-              <button className="bg-gradient-to-r from-pink-500 to-purple-500 text-white px-8 py-4 rounded-full font-semibold hover:shadow-lg hover:shadow-purple-500/50 transition-all transform hover:scale-105">
-                Browse Products
-              </button>
-            </Link>
+           <Link href="/products">
+  <button className="relative bg-gradient-to-r from-blue-600 to-cyan-500 text-white px-8 py-4 rounded-full font-semibold hover:shadow-lg hover:shadow-blue-500/50 transition-all transform hover:scale-105 overflow-hidden group/btn">
+    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover/btn:translate-x-full transition-transform duration-700"></div>
+    <span className="relative z-10">Browse Products</span>
+  </button>
+</Link>
           </div>
         ) : (
           <div className="space-y-6">
@@ -89,7 +90,7 @@ export default function OrdersPage() {
                   <div className="text-right">
                     <span className={`inline-block px-4 py-2 rounded-full text-sm font-semibold ${
                       order.status === 'pending' 
-                        ? 'bg-yellow-500/20 text-yellow-400' 
+                        ? 'bg-cyan-500/20 text-cyan-400' 
                         : order.status === 'delivered'
                         ? 'bg-green-500/20 text-green-400'
                         : 'bg-blue-500/20 text-blue-400'
@@ -103,7 +104,7 @@ export default function OrdersPage() {
                 <div className="space-y-3 mb-4">
                   {order.order_items.map((item, idx) => (
                     <div key={idx} className="flex items-center gap-4">
-                      <div className="w-16 h-16 rounded-lg overflow-hidden bg-gradient-to-br from-purple-500/20 to-cyan-500/20 flex-shrink-0">
+                      <div className="w-16 h-16 rounded-lg overflow-hidden bg-gradient-to-br from-cyan-500/20 to-cyan-500/20 flex-shrink-0">
                         {item.image_url && (
                           <img src={item.image_url} alt={item.name} className="w-full h-full object-cover" />
                         )}
@@ -129,7 +130,7 @@ export default function OrdersPage() {
                   </div>
                   <div className="text-right">
                     <p className="text-sm text-gray-400 mb-1">Total Amount</p>
-                    <p className="text-2xl font-bold bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">
+                    <p className="text-2xl font-bold bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent">
                       ₹{parseFloat(order.total_amount).toFixed(2)}
                     </p>
                   </div>

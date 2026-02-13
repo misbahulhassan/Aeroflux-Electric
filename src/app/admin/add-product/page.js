@@ -93,7 +93,7 @@ export default function AddProductPage() {
   return (
     <div className="min-h-screen bg-zinc-950 text-white pt-24 pb-16 px-8">
       <div className="max-w-3xl mx-auto">
-        <Link href="/admin" className="text-purple-400 hover:text-purple-300 mb-6 inline-block">
+        <Link href="/admin" className="text-blue-400 hover:text-blue-300 mb-6 inline-block">
           ← Back to Admin
         </Link>
 
@@ -110,7 +110,7 @@ export default function AddProductPage() {
                 type="text"
                 value={formData.name}
                 onChange={(e) => setFormData({...formData, name: e.target.value})}
-                className="w-full px-4 py-3 rounded-lg bg-zinc-800 border border-zinc-700 focus:border-purple-500 focus:outline-none transition-colors"
+                className="w-full px-4 py-3 rounded-lg bg-zinc-800 border border-zinc-700 focus:border-blue-500 focus:outline-none transition-colors"
                 placeholder="e.g., Smart Tower Fan"
                 required
               />
@@ -121,7 +121,7 @@ export default function AddProductPage() {
               <textarea
                 value={formData.description}
                 onChange={(e) => setFormData({...formData, description: e.target.value})}
-                className="w-full px-4 py-3 rounded-lg bg-zinc-800 border border-zinc-700 focus:border-purple-500 focus:outline-none transition-colors"
+                className="w-full px-4 py-3 rounded-lg bg-zinc-800 border border-zinc-700 focus:border-blue-500 focus:outline-none transition-colors"
                 placeholder="Product description..."
                 rows="4"
               />
@@ -134,7 +134,7 @@ export default function AddProductPage() {
                 step="0.01"
                 value={formData.price}
                 onChange={(e) => setFormData({...formData, price: e.target.value})}
-                className="w-full px-4 py-3 rounded-lg bg-zinc-800 border border-zinc-700 focus:border-purple-500 focus:outline-none transition-colors"
+                className="w-full px-4 py-3 rounded-lg bg-zinc-800 border border-zinc-700 focus:border-blue-500 focus:outline-none transition-colors"
                 placeholder="299.99"
                 required
               />
@@ -146,7 +146,7 @@ export default function AddProductPage() {
                 type="url"
                 value={formData.image_url}
                 onChange={(e) => setFormData({...formData, image_url: e.target.value})}
-                className="w-full px-4 py-3 rounded-lg bg-zinc-800 border border-zinc-700 focus:border-purple-500 focus:outline-none transition-colors"
+                className="w-full px-4 py-3 rounded-lg bg-zinc-800 border border-zinc-700 focus:border-blue-500 focus:outline-none transition-colors"
                 placeholder="https://images.unsplash.com/photo-..."
               />
               <p className="text-xs text-gray-400 mt-1">
@@ -159,7 +159,7 @@ export default function AddProductPage() {
               <select
                 value={formData.category}
                 onChange={(e) => setFormData({...formData, category: e.target.value})}
-                className="w-full px-4 py-3 rounded-lg bg-zinc-800 border border-zinc-700 focus:border-purple-500 focus:outline-none transition-colors"
+                className="w-full px-4 py-3 rounded-lg bg-zinc-800 border border-zinc-700 focus:border-blue-500 focus:outline-none transition-colors"
               >
                 <option value="">Select Category</option>
                 <option value="Cooling">Cooling</option>
@@ -191,13 +191,14 @@ export default function AddProductPage() {
                   Cancel
                 </button>
               </Link>
-              <button
-                type="submit"
-                disabled={loading}
-                className="flex-1 bg-gradient-to-r from-green-500 to-emerald-500 text-white px-8 py-4 rounded-full font-semibold hover:shadow-2xl hover:shadow-green-500/50 transition-all transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
-              >
-                {loading ? 'Adding Product...' : 'Add Product'}
-              </button>
+             <button
+  type="submit"
+  disabled={loading}
+  className="relative flex-1 bg-gradient-to-r from-blue-600 to-cyan-500 text-white px-8 py-4 rounded-full font-semibold hover:shadow-2xl hover:shadow-blue-500/50 transition-all transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed overflow-hidden group/btn"
+>
+  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover/btn:translate-x-full transition-transform duration-700"></div>
+  <span className="relative z-10">{loading ? 'Adding Product...' : 'Add Product'}</span>
+</button>
             </div>
           </form>
         </div>
@@ -206,7 +207,7 @@ export default function AddProductPage() {
         {formData.image_url && (
           <div className="mt-8 bg-zinc-900/50 backdrop-blur-lg rounded-2xl p-6 border border-zinc-800">
             <p className="text-sm font-semibold mb-4">Image Preview:</p>
-            <div className="aspect-square max-w-sm mx-auto rounded-xl overflow-hidden bg-gradient-to-br from-purple-500/20 to-cyan-500/20">
+            <div className="aspect-square max-w-sm mx-auto rounded-xl overflow-hidden bg-gradient-to-br from-cyan-500/20 to-cyan-500/20">
               <img src={formData.image_url} alt="Preview" className="w-full h-full object-cover" />
             </div>
           </div>

@@ -41,13 +41,13 @@ export default function OrderSuccessPage() {
 
         {/* Order Details Box */}
         <div className="bg-zinc-900/50 backdrop-blur-lg rounded-2xl p-8 border border-zinc-800 mb-8">
-          <h2 className="text-2xl font-bold mb-4 bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">
+          <h2 className="text-2xl font-bold mb-4 bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent">
             What happens next?
           </h2>
           <div className="space-y-4 text-left">
             <div className="flex items-start gap-3">
-              <div className="w-8 h-8 rounded-full bg-purple-500/20 flex items-center justify-center flex-shrink-0 mt-1">
-                <span className="text-purple-400 font-bold">1</span>
+              <div className="w-8 h-8 rounded-full bg-blue-500/20 flex items-center justify-center flex-shrink-0 mt-1">
+                <span className="text-blue-400 font-bold">1</span>
               </div>
               <div>
                 <p className="font-semibold">Order Confirmation</p>
@@ -56,8 +56,8 @@ export default function OrderSuccessPage() {
             </div>
             
             <div className="flex items-start gap-3">
-              <div className="w-8 h-8 rounded-full bg-purple-500/20 flex items-center justify-center flex-shrink-0 mt-1">
-                <span className="text-purple-400 font-bold">2</span>
+              <div className="w-8 h-8 rounded-full bg-blue-500/20 flex items-center justify-center flex-shrink-0 mt-1">
+                <span className="text-blue-400 font-bold">2</span>
               </div>
               <div>
                 <p className="font-semibold">Delivery Scheduled</p>
@@ -66,8 +66,8 @@ export default function OrderSuccessPage() {
             </div>
             
             <div className="flex items-start gap-3">
-              <div className="w-8 h-8 rounded-full bg-purple-500/20 flex items-center justify-center flex-shrink-0 mt-1">
-                <span className="text-purple-400 font-bold">3</span>
+              <div className="w-8 h-8 rounded-full bg-blue-500/20 flex items-center justify-center flex-shrink-0 mt-1">
+                <span className="text-blue-400 font-bold">3</span>
               </div>
               <div>
                 <p className="font-semibold">Pay on Delivery</p>
@@ -80,16 +80,18 @@ export default function OrderSuccessPage() {
         {/* Action Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link href="/products">
-            <button className="bg-gradient-to-r from-pink-500 to-purple-500 text-white px-8 py-4 rounded-full font-semibold hover:shadow-2xl hover:shadow-purple-500/50 transition-all transform hover:scale-105">
-              Continue Shopping
-            </button>
-          </Link>
+  <button className="relative bg-gradient-to-r from-blue-600 to-cyan-500 text-white px-8 py-4 rounded-full font-semibold hover:shadow-2xl hover:shadow-blue-500/50 transition-all transform hover:scale-105 overflow-hidden group/btn">
+    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover/btn:translate-x-full transition-transform duration-700"></div>
+    <span className="relative z-10">Continue Shopping</span>
+  </button>
+</Link>
           
           <Link href="/">
-            <button className="border-2 border-purple-500 text-purple-400 px-8 py-4 rounded-full font-semibold hover:bg-purple-500 hover:text-white transition-all">
-              Back to Home
-            </button>
-          </Link>
+  <button className="relative border-2 border-blue-500 text-blue-400 px-8 py-4 rounded-full font-semibold hover:bg-blue-500 hover:text-white transition-all overflow-hidden group/btn">
+    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-blue-400/20 to-transparent -translate-x-full group-hover/btn:translate-x-full transition-transform duration-700"></div>
+    <span className="relative z-10">Back to Home</span>
+  </button>
+</Link>
         </div>
 
         {/* Contact Info */}
